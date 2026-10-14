@@ -1,0 +1,1525 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>MoneyRoot — Dashboard</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css">
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/chart.js">
+    </script>
+
+</head>
+
+
+<body>
+
+<div class="app">
+
+
+    <!-- =========================================================
+         SIDEBAR
+    ========================================================== -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-top">
+
+            <a
+                href="/"
+                class="brand">
+                Money<span>Root</span>
+            </a>
+
+
+            <nav class="main-nav">
+
+                <button
+                    class="nav-item active"
+                    data-section="dashboard">
+
+                    <span class="nav-icon">⌂</span>
+
+                    <span>
+                        Dashboard
+                    </span>
+
+                </button>
+
+
+                <button
+                    class="nav-item"
+                    data-section="transactions">
+
+                    <span class="nav-icon">↔</span>
+
+                    <span>
+                        Transactions
+                    </span>
+
+                </button>
+
+
+                <button
+                    class="nav-item"
+                    data-section="budget">
+
+                    <span class="nav-icon">▣</span>
+
+                    <span>
+                        Budget
+                    </span>
+
+                </button>
+
+
+                <button
+                    class="nav-item"
+                    data-section="goals">
+
+                    <span class="nav-icon">◎</span>
+
+                    <span>
+                        Goals
+                    </span>
+
+                </button>
+
+
+                <button
+                    class="nav-item"
+                    data-section="debt">
+
+                    <span class="nav-icon">▤</span>
+
+                    <span>
+                        Debt
+                    </span>
+
+                </button>
+
+
+                <button
+                    class="nav-item"
+                    data-section="analytics">
+
+                    <span class="nav-icon">◒</span>
+
+                    <span>
+                        Analytics
+                    </span>
+
+                </button>
+
+
+                <button
+                    class="nav-item"
+                    data-section="resources">
+
+                    <span class="nav-icon">?</span>
+
+                    <span>
+                        Resources
+                    </span>
+
+                </button>
+
+            </nav>
+
+        </div>
+
+
+        <!-- SIDEBAR ACCOUNT -->
+
+        <div class="sidebar-bottom">
+
+            <div class="account-box">
+
+                <div class="account-avatar">
+                    <span id="accountInitial">
+                        M
+                    </span>
+                </div>
+
+                <div class="account-info">
+
+                    <strong id="accountName">
+                        Guest
+                    </strong>
+
+                    <small id="accountEmail">
+                        Guest Mode
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <button
+                id="logoutBtn"
+                class="logout-btn">
+
+                Log Out
+
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =========================================================
+         MAIN CONTENT
+    ========================================================== -->
+
+    <main class="main-content">
+
+
+        <!-- TOPBAR -->
+
+        <header class="topbar">
+
+            <div>
+
+                <p class="topbar-eyebrow">
+                    MONEYROOT
+                </p>
+
+                <h1 id="pageTitle">
+                    Dashboard
+                </h1>
+
+            </div>
+
+
+            <div class="topbar-actions">
+
+                <button
+                    id="themeBtn"
+                    class="icon-btn"
+                    type="button"
+                    aria-label="Toggle theme">
+
+                    ◐
+
+                </button>
+
+
+                <button
+                    id="addTransactionBtn"
+                    class="primary-btn"
+                    type="button">
+
+                    + Add Transaction
+
+                </button>
+
+            </div>
+
+        </header>
+
+
+        <!-- =====================================================
+             DASHBOARD SECTION
+        ====================================================== -->
+
+        <section
+            id="dashboard"
+            class="page-section active">
+
+
+            <!-- STATS -->
+
+            <div class="stats-grid">
+
+                <article class="stat-card">
+
+                    <div class="stat-label">
+                        Income
+                    </div>
+
+                    <div
+                        id="incomeStat"
+                        class="stat-value">
+                        $0.00
+                    </div>
+
+                    <div class="stat-description">
+                        Total income
+                    </div>
+
+                </article>
+
+
+                <article class="stat-card">
+
+                    <div class="stat-label">
+                        Expenses
+                    </div>
+
+                    <div
+                        id="expenseStat"
+                        class="stat-value">
+                        $0.00
+                    </div>
+
+                    <div class="stat-description">
+                        Total spending
+                    </div>
+
+                </article>
+
+
+                <article class="stat-card">
+
+                    <div class="stat-label">
+                        Available
+                    </div>
+
+                    <div
+                        id="availableStat"
+                        class="stat-value">
+                        $0.00
+                    </div>
+
+                    <div class="stat-description">
+                        Income minus expenses
+                    </div>
+
+                </article>
+
+
+                <article class="stat-card">
+
+                    <div class="stat-label">
+                        Debt
+                    </div>
+
+                    <div
+                        id="debtStat"
+                        class="stat-value">
+                        $0.00
+                    </div>
+
+                    <div class="stat-description">
+                        Total debt
+                    </div>
+
+                </article>
+
+            </div>
+
+
+            <!-- CHARTS -->
+
+            <div class="dashboard-grid">
+
+                <article class="dashboard-card">
+
+                    <div class="card-header">
+
+                        <div>
+
+                            <p class="card-eyebrow">
+                                SPENDING
+                            </p>
+
+                            <h2>
+                                Where your money goes
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+                    <div class="chart-container">
+
+                        <canvas
+                            id="categoryChart">
+                        </canvas>
+
+                    </div>
+
+                </article>
+
+
+                <article class="dashboard-card">
+
+                    <div class="card-header">
+
+                        <div>
+
+                            <p class="card-eyebrow">
+                                BUDGET
+                            </p>
+
+                            <h2>
+                                Budget progress
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+                    <div class="chart-container">
+
+                        <canvas
+                            id="budgetChart">
+                        </canvas>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+
+            <!-- RECENT TRANSACTIONS + GOALS -->
+
+            <div class="dashboard-grid">
+
+                <article class="dashboard-card">
+
+                    <div class="card-header">
+
+                        <div>
+
+                            <p class="card-eyebrow">
+                                ACTIVITY
+                            </p>
+
+                            <h2>
+                                Recent transactions
+                            </h2>
+
+                        </div>
+
+                        <button
+                            class="text-btn"
+                            data-section-link="transactions">
+                            View all
+                        </button>
+
+                    </div>
+
+                    <div
+                        id="dashboardTransactions"
+                        class="list-container">
+
+                        <div class="empty-state">
+                            No transactions yet.
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <article class="dashboard-card">
+
+                    <div class="card-header">
+
+                        <div>
+
+                            <p class="card-eyebrow">
+                                SAVINGS
+                            </p>
+
+                            <h2>
+                                Your goals
+                            </h2>
+
+                        </div>
+
+                        <button
+                            class="text-btn"
+                            data-section-link="goals">
+                            View all
+                        </button>
+
+                    </div>
+
+                    <div
+                        id="dashboardGoals"
+                        class="list-container">
+
+                        <div class="empty-state">
+                            No savings goals yet.
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             TRANSACTIONS
+        ====================================================== -->
+
+        <section
+            id="transactions"
+            class="page-section">
+
+            <div class="section-toolbar">
+
+                <div>
+
+                    <p class="section-eyebrow">
+                        TRANSACTIONS
+                    </p>
+
+                    <h2>
+                        Your transactions
+                    </h2>
+
+                </div>
+
+                <button
+                    id="addTransactionBtn2"
+                    class="primary-btn">
+
+                    + Add Transaction
+
+                </button>
+
+            </div>
+
+
+            <div class="filters-bar">
+
+                <input
+                    id="transactionSearch"
+                    type="search"
+                    placeholder="Search transactions...">
+
+
+                <select id="transactionFilter">
+
+                    <option value="all">
+                        All transactions
+                    </option>
+
+                    <option value="income">
+                        Income
+                    </option>
+
+                    <option value="expense">
+                        Expenses
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div
+                id="transactionList"
+                class="data-list">
+
+                <div class="empty-state">
+                    No transactions yet.
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             BUDGET
+        ====================================================== -->
+
+        <section
+            id="budget"
+            class="page-section">
+
+            <div class="section-toolbar">
+
+                <div>
+
+                    <p class="section-eyebrow">
+                        BUDGET
+                    </p>
+
+                    <h2>
+                        Manage your budget
+                    </h2>
+
+                </div>
+
+                <button
+                    id="addBudgetBtn"
+                    class="primary-btn">
+
+                    + Add Budget
+
+                </button>
+
+            </div>
+
+
+            <div
+                id="budgetCards"
+                class="cards-grid">
+
+                <div class="empty-state">
+                    No budgets yet.
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             GOALS
+        ====================================================== -->
+
+        <section
+            id="goals"
+            class="page-section">
+
+            <div class="section-toolbar">
+
+                <div>
+
+                    <p class="section-eyebrow">
+                        GOALS
+                    </p>
+
+                    <h2>
+                        Savings goals
+                    </h2>
+
+                </div>
+
+                <button
+                    id="addGoalBtn"
+                    class="primary-btn">
+
+                    + Add Goal
+
+                </button>
+
+            </div>
+
+
+            <div
+                id="goalCards"
+                class="cards-grid">
+
+                <div class="empty-state">
+                    No savings goals yet.
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             DEBT
+        ====================================================== -->
+
+        <section
+            id="debt"
+            class="page-section">
+
+            <div class="section-toolbar">
+
+                <div>
+
+                    <p class="section-eyebrow">
+                        DEBT
+                    </p>
+
+                    <h2>
+                        Manage your debt
+                    </h2>
+
+                </div>
+
+                <button
+                    id="addDebtBtn"
+                    class="primary-btn">
+
+                    + Add Debt
+
+                </button>
+
+            </div>
+
+
+            <div
+                id="debtList"
+                class="data-list">
+
+                <div class="empty-state">
+                    No debts added yet.
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             ANALYTICS
+        ====================================================== -->
+
+        <section
+            id="analytics"
+            class="page-section">
+
+            <div class="section-toolbar">
+
+                <div>
+
+                    <p class="section-eyebrow">
+                        ANALYTICS
+                    </p>
+
+                    <h2>
+                        Understand your finances
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="dashboard-grid">
+
+                <article class="dashboard-card">
+
+                    <div class="card-header">
+
+                        <div>
+
+                            <p class="card-eyebrow">
+                                CASH FLOW
+                            </p>
+
+                            <h2>
+                                Income vs. expenses
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+                    <div class="chart-container large-chart">
+
+                        <canvas
+                            id="incomeExpenseChart">
+                        </canvas>
+
+                    </div>
+
+                </article>
+
+
+                <article class="dashboard-card">
+
+                    <div class="card-header">
+
+                        <div>
+
+                            <p class="card-eyebrow">
+                                CATEGORIES
+                            </p>
+
+                            <h2>
+                                Spending breakdown
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+                    <div class="chart-container large-chart">
+
+                        <canvas
+                            id="analyticsCategoryChart">
+                        </canvas>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+
+            <article class="dashboard-card analytics-insights-card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <p class="card-eyebrow">
+                            INSIGHTS
+                        </p>
+
+                        <h2>
+                            Financial insights
+                        </h2>
+
+                    </div>
+
+                </div>
+
+                <div
+                    id="analyticsInsights"
+                    class="analytics-insights">
+
+                    <div class="empty-state">
+                        Add transactions to start seeing insights.
+                    </div>
+
+                </div>
+
+            </article>
+
+        </section>
+
+
+        <!-- =====================================================
+             RESOURCES
+        ====================================================== -->
+
+        <section
+            id="resources"
+            class="page-section">
+
+            <div class="section-toolbar">
+
+                <div>
+
+                    <p class="section-eyebrow">
+                        RESOURCES
+                    </p>
+
+                    <h2>
+                        Learn about personal finance
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="resources-grid">
+
+                <article class="resource-card">
+
+                    <span class="resource-number">
+                        01
+                    </span>
+
+                    <h3>
+                        Budgeting
+                    </h3>
+
+                    <p>
+                        A budget is a plan for how you will use your
+                        income. Start by understanding your essential
+                        expenses and then decide what you want to save
+                        and spend.
+                    </p>
+
+                </article>
+
+
+                <article class="resource-card">
+
+                    <span class="resource-number">
+                        02
+                    </span>
+
+                    <h3>
+                        Emergency Funds
+                    </h3>
+
+                    <p>
+                        An emergency fund can help cover unexpected
+                        expenses without immediately relying on credit
+                        cards or loans.
+                    </p>
+
+                </article>
+
+
+                <article class="resource-card">
+
+                    <span class="resource-number">
+                        03
+                    </span>
+
+                    <h3>
+                        Credit
+                    </h3>
+
+                    <p>
+                        Credit can affect borrowing costs and access to
+                        financial products. Paying bills on time and
+                        managing balances are important habits.
+                    </p>
+
+                </article>
+
+
+                <article class="resource-card">
+
+                    <span class="resource-number">
+                        04
+                    </span>
+
+                    <h3>
+                        Long-Term Planning
+                    </h3>
+
+                    <p>
+                        Financial planning involves thinking beyond the
+                        current month and setting goals for future needs
+                        and priorities.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<!-- =============================================================
+     TRANSACTION MODAL
+============================================================== -->
+
+<div
+    id="transactionModal"
+    class="modal-overlay">
+
+    <div class="modal">
+
+        <div class="modal-header">
+
+            <div>
+
+                <p class="modal-eyebrow">
+                    TRANSACTION
+                </p>
+
+                <h2 id="transactionModalTitle">
+                    Add transaction
+                </h2>
+
+            </div>
+
+            <button
+                class="modal-close"
+                type="button"
+                data-close-modal="transactionModal">
+                ×
+            </button>
+
+        </div>
+
+
+        <form id="transactionForm">
+
+            <input
+                type="hidden"
+                id="transactionId">
+
+
+            <div class="form-group">
+
+                <label for="transactionDescription">
+                    Description
+                </label>
+
+                <input
+                    id="transactionDescription"
+                    name="description"
+                    type="text"
+                    placeholder="e.g. Groceries"
+                    required>
+
+            </div>
+
+
+            <div class="form-row">
+
+                <div class="form-group">
+
+                    <label for="transactionAmount">
+                        Amount
+                    </label>
+
+                    <input
+                        id="transactionAmount"
+                        name="amount"
+                        type="number"
+                        min="0"
+                        step="0.01"
+                        placeholder="0.00"
+                        required>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="transactionType">
+                        Type
+                    </label>
+
+                    <select
+                        id="transactionType"
+                        name="type"
+                        required>
+
+                        <option value="expense">
+                            Expense
+                        </option>
+
+                        <option value="income">
+                            Income
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <div class="form-row">
+
+                <div class="form-group">
+
+                    <label for="transactionCategory">
+                        Category
+                    </label>
+
+                    <select
+                        id="transactionCategory"
+                        name="category">
+
+                        <option value="Housing">
+                            Housing
+                        </option>
+
+                        <option value="Food">
+                            Food
+                        </option>
+
+                        <option value="Transportation">
+                            Transportation
+                        </option>
+
+                        <option value="Shopping">
+                            Shopping
+                        </option>
+
+                        <option value="Entertainment">
+                            Entertainment
+                        </option>
+
+                        <option value="Health">
+                            Health
+                        </option>
+
+                        <option value="Education">
+                            Education
+                        </option>
+
+                        <option value="Bills">
+                            Bills
+                        </option>
+
+                        <option value="Other">
+                            Other
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="transactionDate">
+                        Date
+                    </label>
+
+                    <input
+                        id="transactionDate"
+                        name="date"
+                        type="date"
+                        required>
+
+                </div>
+
+            </div>
+
+
+            <div class="modal-actions">
+
+                <button
+                    type="button"
+                    class="secondary-btn"
+                    data-close-modal="transactionModal">
+                    Cancel
+                </button>
+
+                <button
+                    type="submit"
+                    class="primary-btn">
+                    Save Transaction
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<!-- =============================================================
+     BUDGET MODAL
+============================================================== -->
+
+<div
+    id="budgetModal"
+    class="modal-overlay">
+
+    <div class="modal">
+
+        <div class="modal-header">
+
+            <div>
+
+                <p class="modal-eyebrow">
+                    BUDGET
+                </p>
+
+                <h2>
+                    Add budget
+                </h2>
+
+            </div>
+
+            <button
+                class="modal-close"
+                type="button"
+                data-close-modal="budgetModal">
+                ×
+            </button>
+
+        </div>
+
+
+        <form id="budgetForm">
+
+            <input
+                type="hidden"
+                id="budgetId">
+
+
+            <div class="form-group">
+
+                <label for="budgetCategory">
+                    Category
+                </label>
+
+                <select
+                    id="budgetCategory"
+                    name="category"
+                    required>
+
+                    <option value="Housing">
+                        Housing
+                    </option>
+
+                    <option value="Food">
+                        Food
+                    </option>
+
+                    <option value="Transportation">
+                        Transportation
+                    </option>
+
+                    <option value="Shopping">
+                        Shopping
+                    </option>
+
+                    <option value="Entertainment">
+                        Entertainment
+                    </option>
+
+                    <option value="Health">
+                        Health
+                    </option>
+
+                    <option value="Education">
+                        Education
+                    </option>
+
+                    <option value="Bills">
+                        Bills
+                    </option>
+
+                    <option value="Other">
+                        Other
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="budgetAmount">
+                    Monthly limit
+                </label>
+
+                <input
+                    id="budgetAmount"
+                    name="amount"
+                    type="number"
+                    min="0"
+                    step="0.01"
+                    placeholder="0.00"
+                    required>
+
+            </div>
+
+
+            <div class="modal-actions">
+
+                <button
+                    type="button"
+                    class="secondary-btn"
+                    data-close-modal="budgetModal">
+                    Cancel
+                </button>
+
+                <button
+                    type="submit"
+                    class="primary-btn">
+                    Save Budget
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<!-- =============================================================
+     GOAL MODAL
+============================================================== -->
+
+<div
+    id="goalModal"
+    class="modal-overlay">
+
+    <div class="modal">
+
+        <div class="modal-header">
+
+            <div>
+
+                <p class="modal-eyebrow">
+                    SAVINGS GOAL
+                </p>
+
+                <h2>
+                    Add goal
+                </h2>
+
+            </div>
+
+            <button
+                class="modal-close"
+                type="button"
+                data-close-modal="goalModal">
+                ×
+            </button>
+
+        </div>
+
+
+        <form id="goalForm">
+
+            <input
+                type="hidden"
+                id="goalId">
+
+
+            <div class="form-group">
+
+                <label for="goalName">
+                    Goal name
+                </label>
+
+                <input
+                    id="goalName"
+                    name="name"
+                    type="text"
+                    placeholder="e.g. Emergency Fund"
+                    required>
+
+            </div>
+
+
+            <div class="form-row">
+
+                <div class="form-group">
+
+                    <label for="goalTarget">
+                        Target amount
+                    </label>
+
+                    <input
+                        id="goalTarget"
+                        name="target"
+                        type="number"
+                        min="0"
+                        step="0.01"
+                        placeholder="0.00"
+                        required>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="goalCurrent">
+                        Current amount
+                    </label>
+
+                    <input
+                        id="goalCurrent"
+                        name="current"
+                        type="number"
+                        min="0"
+                        step="0.01"
+                        value="0"
+                        placeholder="0.00">
+
+                </div>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="goalMonthly">
+                    Monthly contribution
+                </label>
+
+                <input
+                    id="goalMonthly"
+                    name="monthly"
+                    type="number"
+                    min="0"
+                    step="0.01"
+                    value="0"
+                    placeholder="0.00">
+
+            </div>
+
+
+            <div class="modal-actions">
+
+                <button
+                    type="button"
+                    class="secondary-btn"
+                    data-close-modal="goalModal">
+                    Cancel
+                </button>
+
+                <button
+                    type="submit"
+                    class="primary-btn">
+                    Save Goal
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<!-- =============================================================
+     DEBT MODAL
+============================================================== -->
+
+<div
+    id="debtModal"
+    class="modal-overlay">
+
+    <div class="modal">
+
+        <div class="modal-header">
+
+            <div>
+
+                <p class="modal-eyebrow">
+                    DEBT
+                </p>
+
+                <h2>
+                    Add debt
+                </h2>
+
+            </div>
+
+            <button
+                class="modal-close"
+                type="button"
+                data-close-modal="debtModal">
+                ×
+            </button>
+
+        </div>
+
+
+        <form id="debtForm">
+
+            <input
+                type="hidden"
+                id="debtId">
+
+
+            <div class="form-group">
+
+                <label for="debtName">
+                    Debt name
+                </label>
+
+                <input
+                    id="debtName"
+                    name="name"
+                    type="text"
+                    placeholder="e.g. Credit Card"
+                    required>
+
+            </div>
+
+
+            <div class="form-row">
+
+                <div class="form-group">
+
+                    <label for="debtBalance">
+                        Balance
+                    </label>
+
+                    <input
+                        id="debtBalance"
+                        name="balance"
+                        type="number"
+                        min="0"
+                        step="0.01"
+                        placeholder="0.00"
+                        required>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="debtApr">
+                        APR %
+                    </label>
+
+                    <input
+                        id="debtApr"
+                        name="apr"
+                        type="number"
+                        min="0"
+                        step="0.01"
+                        placeholder="0.00">
+
+                </div>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="debtMinimum">
+                    Minimum payment
+                </label>
+
+                <input
+                    id="debtMinimum"
+                    name="minimum"
+                    type="number"
+                    min="0"
+                    step="0.01"
+                    placeholder="0.00">
+
+            </div>
+
+
+            <div class="modal-actions">
+
+                <button
+                    type="button"
+                    class="secondary-btn"
+                    data-close-modal="debtModal">
+                    Cancel
+                </button>
+
+                <button
+                    type="submit"
+                    class="primary-btn">
+                    Save Debt
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

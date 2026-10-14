@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MoneyRoot — Personal Finance, Simplified</title>
+
+    <link rel="stylesheet" href="landing.css">
+    <link rel="stylesheet" href="landing.css">
+
+   
+
+    <!-- =========================================================
+         NAVIGATION
+    ========================================================== -->
+
+    <nav class="landing-nav">
+        <div class="landing-nav-inner">
+
+            <a href="/" class="landing-logo">
+                Money<span>Root</span>
+            </a>
+
+            <div class="landing-nav-links">
+                <a href="#features">Features</a>
+                <a href="#how-it-works">How It Works</a>
+                <a href="#about">About</a>
+
+                <button class="nav-login" onclick="openAuth('login')">
+                    Log In
+                </button>
+
+                <button class="nav-get-started" onclick="openGetStarted()">
+                    Get Started
+                </button>
+            </div>
+
+        </div>
+    </nav>
+
+
+    <!-- =========================================================
+         HERO
+    ========================================================== -->
+
+    <main>
+
+        <section class="landing-hero">
+
+            <div class="hero-copy">
+
+                <p class="hero-eyebrow">
+                    PERSONAL FINANCE, SIMPLIFIED
+                </p>
+
+                <h1>
+                    Take control
+                    <span>of your money.</span>
+                </h1>
+
+                <p class="hero-description">
+                    MoneyRoot helps you understand where your money goes,
+                    plan your goals, manage debt, and build better financial
+                    habits — all in one place.
+                </p>
+
+                <div class="hero-actions">
+
+                    <button
+                        class="hero-primary"
+                        onclick="openGetStarted()">
+                        Get Started
+                    </button>
+
+                    <a
+                        href="#features"
+                        class="hero-secondary"
+                        style="text-decoration:none;">
+                        Explore MoneyRoot
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- Dashboard preview -->
+
+            <div class="hero-preview">
+
+                <div class="preview-window">
+
+                    <div class="preview-topbar">
+
+                        <div class="preview-dots">
+                            <i></i>
+                            <i></i>
+                            <i></i>
+                        </div>
+
+                        <span class="preview-label">
+                            MONEYROOT DASHBOARD
+                        </span>
+
+                    </div>
+
+                    <div class="preview-content">
+
+                        <div class="preview-welcome">
+                            YOUR FINANCIAL OVERVIEW
+                        </div>
+
+                        <div class="preview-balance">
+                            $4,280.00
+                        </div>
+
+                        <div class="preview-stats">
+
+                            <div class="preview-stat">
+                                <small>INCOME</small>
+                                <strong>$5,200</strong>
+                            </div>
+
+                            <div class="preview-stat">
+                                <small>EXPENSES</small>
+                                <strong>$920</strong>
+                            </div>
+
+                            <div class="preview-stat">
+                                <small>AVAILABLE</small>
+                                <strong>$4,280</strong>
+                            </div>
+
+                        </div>
+
+                        <div class="preview-chart">
+                            <div class="preview-bar"></div>
+                            <div class="preview-bar"></div>
+                            <div class="preview-bar"></div>
+                            <div class="preview-bar"></div>
+                            <div class="preview-bar"></div>
+                            <div class="preview-bar"></div>
+                            <div class="preview-bar"></div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             INTRO
+        ====================================================== -->
+
+        <section class="landing-intro">
+
+            <div class="landing-intro-inner">
+
+                <p class="section-label">
+                    A BETTER WAY TO MANAGE MONEY
+                </p>
+
+                <h2>
+                    Your money should have a plan.
+                </h2>
+
+                <p>
+                    MoneyRoot gives you a simple place to see your finances,
+                    organize your spending, work toward savings goals, and
+                    understand your debt without making personal finance
+                    feel overwhelming.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             FEATURES
+        ====================================================== -->
+
+        <section class="landing-section" id="features">
+
+            <div class="section-heading">
+
+                <span class="section-label">
+                    WHAT YOU CAN DO
+                </span>
+
+                <h2>
+                    Everything you need to understand your money.
+                </h2>
+
+            </div>
+
+            <div class="feature-grid">
+
+                <article class="feature-card">
+
+                    <div class="feature-number">
+                        01
+                    </div>
+
+                    <h3>Budget</h3>
+
+                    <p>
+                        Set spending limits and understand exactly
+                        where your money is going each month.
+                    </p>
+
+                </article>
+
+
+                <article class="feature-card">
+
+                    <div class="feature-number">
+                        02
+                    </div>
+
+                    <h3>Goals</h3>
+
+                    <p>
+                        Create savings goals and track your progress
+                        toward the things that matter to you.
+                    </p>
+
+                </article>
+
+
+                <article class="feature-card">
+
+                    <div class="feature-number">
+                        03
+                    </div>
+
+                    <h3>Debt</h3>
+
+                    <p>
+                        Keep track of loans and credit cards so you
+                        can understand what you owe and plan ahead.
+                    </p>
+
+                </article>
+
+
+                <article class="feature-card">
+
+                    <div class="feature-number">
+                        04
+                    </div>
+
+                    <h3>Analytics</h3>
+
+                    <p>
+                        Turn your financial activity into clear
+                        charts and insights that are easy to understand.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             HOW IT WORKS
+        ====================================================== -->
+
+        <section class="how-section" id="how-it-works">
+
+            <div class="landing-section">
+
+                <div class="section-heading">
+
+                    <span class="section-label">
+                        HOW IT WORKS
+                    </span>
+
+                    <h2>
+                        Start simple. Build from there.
+                    </h2>
+
+                </div>
+
+                <div class="steps">
+
+                    <article class="step">
+
+                        <span class="step-number">
+                            01
+                        </span>
+
+                        <h3>
+                            Create your account
+                        </h3>
+
+                        <p>
+                            Create a MoneyRoot account if you want your
+                            financial information saved securely so you
+                            can return to it later.
+                        </p>
+
+                    </article>
+
+
+                    <article class="step">
+
+                        <span class="step-number">
+                            02
+                        </span>
+
+                        <h3>
+                            Add your information
+                        </h3>
+
+                        <p>
+                            Add transactions, budgets, savings goals,
+                            and debts as you build your personal
+                            financial picture.
+                        </p>
+
+                    </article>
+
+
+                    <article class="step">
+
+                        <span class="step-number">
+                            03
+                        </span>
+
+                        <h3>
+                            Understand your progress
+                        </h3>
+
+                        <p>
+                            Use your dashboard and analytics to see
+                            patterns, monitor progress, and make more
+                            informed financial decisions.
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             ABOUT
+        ====================================================== -->
+
+        <section class="landing-section" id="about">
+
+            <div class="about-grid">
+
+                <div class="about-copy">
+
+                    <span class="section-label">
+                        ABOUT MONEYROOT
+                    </span>
+
+                    <h2>
+                        Personal finance without the confusion.
+                    </h2>
+
+                    <p>
+                        MoneyRoot was designed to make financial
+                        organization easier for young adults who are
+                        building their financial independence.
+                    </p>
+
+                </div>
+
+
+                <div class="about-points">
+
+                    <div class="about-point">
+
+                        <div>
+                            <strong>
+                                Start from zero
+                            </strong>
+
+                            <p>
+                                New accounts begin with no financial
+                                information or demo data.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="about-point">
+
+                        <div>
+                            <strong>
+                                Keep your information private
+                            </strong>
+
+                            <p>
+                                Your account data is separated from
+                                other users' financial information.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="about-point">
+
+                        <div>
+                            <strong>
+                                Explore before committing
+                            </strong>
+
+                            <p>
+                                You can use Guest Mode to explore the
+                                app without creating an account.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             FINAL CTA
+        ====================================================== -->
+
+        <section class="final-cta">
+
+            <div class="final-cta-box">
+
+                <h2>
+                    Ready to take control?
+                </h2>
+
+                <p>
+                    Start organizing your finances with MoneyRoot.
+                    Create an account, log in, or explore as a guest.
+                </p>
+
+                <button
+                    class="hero-primary"
+                    onclick="openGetStarted()">
+                    Get Started
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================================================
+         FOOTER
+    ========================================================== -->
+
+    <footer class="landing-footer">
+
+        <div class="landing-footer-inner">
+
+            <a href="/" class="landing-logo">
+                Money<span>Root</span>
+            </a>
+
+            <p>
+                Personal finance, simplified.
+            </p>
+
+        </div>
+
+    </footer>
+
+</div>
+
+
+<!-- =============================================================
+     GET STARTED MODAL
+============================================================== -->
+
+<div
+    id="getStartedModal"
+    class="landing-modal"
+    onclick="handleModalBackground(event, 'getStartedModal')">
+
+    <div class="modal-card">
+
+        <button
+            class="modal-close"
+            onclick="closeGetStarted()"
+            aria-label="Close">
+            ×
+        </button>
+
+        <h2>
+            Get started with MoneyRoot
+        </h2>
+
+        <p>
+            Choose how you want to use MoneyRoot.
+        </p>
+
+        <div class="start-options">
+
+            <button
+                class="start-option"
+                onclick="openAuth('signup')">
+
+                <strong>
+                    Create an Account
+                </strong>
+
+                <span>
+                    Save your financial information and return to it later.
+                </span>
+
+            </button>
+
+
+            <button
+                class="start-option"
+                onclick="openAuth('login')">
+
+                <strong>
+                    Log In
+                </strong>
+
+                <span>
+                    Continue managing the financial information already
+                    saved to your account.
+                </span>
+
+            </button>
+
+
+            <button
+                class="start-option"
+                onclick="continueAsGuest()">
+
+                <strong>
+                    Continue as Guest
+                </strong>
+
+                <span>
+                    Explore MoneyRoot without creating an account.
+                    Your guest information stays on this browser.
+                </span>
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =============================================================
+     AUTH MODAL
+============================================================== -->
+
+<div
+    id="authModal"
+    class="landing-modal"
+    onclick="handleModalBackground(event, 'authModal')">
+
+    <div class="modal-card">
+
+        <button
+            class="modal-close"
+            onclick="closeAuth()"
+            aria-label="Close">
+            ×
+        </button>
+
+
+        <!-- LOGIN -->
+
+        <form
+            id="loginForm"
+            class="auth-form active"
+            onsubmit="handleLogin(event)">
+
+            <h2>
+                Welcome back
+            </h2>
+
+            <p>
+                Log in to continue managing your finances.
+            </p>
+
+            <div
+                id="loginError"
+                class="auth-error">
+            </div>
+
+            <div class="auth-field">
+
+                <label for="loginEmail">
+                    Email
+                </label>
+
+                <input
+                    type="email"
+                    id="loginEmail"
+                    name="email"
+                    placeholder="you@example.com"
+                    autocomplete="email"
+                    required>
+
+            </div>
+
+
+            <div class="auth-field">
+
+                <label for="loginPassword">
+                    Password
+                </label>
+
+                <input
+                    type="password"
+                    id="loginPassword"
+                    name="password"
+                    placeholder="Enter your password"
+                    autocomplete="current-password"
+                    required>
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="auth-submit">
+                Log In
+            </button>
+
+            <div class="auth-switch">
+
+                Don't have an account?
+
+                <button
+                    type="button"
+                    onclick="switchAuth('signup')">
+                    Create one
+                </button>
+
+            </div>
+
+        </form>
+
+
+        <!-- SIGN UP -->
+
+        <form
+            id="signupForm"
+            class="auth-form"
+            onsubmit="handleSignup(event)">
+
+            <h2>
+                Create your account
+            </h2>
+
+            <p>
+                Your account starts with a completely empty financial
+                dashboard.
+            </p>
+
+            <div
+                id="signupError"
+                class="auth-error">
+            </div>
+
+            <div class="auth-field">
+
+                <label for="signupName">
+                    Name
+                </label>
+
+                <input
+                    type="text"
+                    id="signupName"
+                    name="name"
+                    placeholder="Your name"
+                    autocomplete="name"
+                    required>
+
+            </div>
+
+
+            <div class="auth-field">
+
+                <label for="signupEmail">
+                    Email
+                </label>
+
+                <input
+                    type="email"
+                    id="signupEmail"
+                    name="email"
+                    placeholder="you@example.com"
+                    autocomplete="email"
+                    required>
+
+            </div>
+
+
+            <div class="auth-field">
+
+                <label for="signupPassword">
+                    Password
+                </label>
+
+                <input
+                    type="password"
+                    id="signupPassword"
+                    name="password"
+                    placeholder="At least 6 characters"
+                    minlength="6"
+                    autocomplete="new-password"
+                    required>
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="auth-submit">
+                Create Account
+            </button>
+
+            <div class="auth-switch">
+
+                Already have an account?
+
+                <button
+                    type="button"
+                    onclick="switchAuth('login')">
+                    Log in
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
